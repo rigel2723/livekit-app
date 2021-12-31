@@ -1,0 +1,83 @@
+{
+  "_from": "livekit-client@^0.15.0",
+  "_id": "livekit-client@0.15.0",
+  "_inBundle": false,
+  "_integrity": "sha512-GFNQXhgGMA2sCVzX2PDhDe85uYX7J+TIJKK3DmrD9QDL13FyNUpgjVDa+eV4QjFHl5dTWH7RDoR58nf5gtCTwg==",
+  "_location": "/livekit-client",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "livekit-client@^0.15.0",
+    "name": "livekit-client",
+    "escapedName": "livekit-client",
+    "rawSpec": "^0.15.0",
+    "saveSpec": null,
+    "fetchSpec": "^0.15.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/livekit-client/-/livekit-client-0.15.0.tgz",
+  "_shasum": "b0e2adfcd671296e5480d7d93c37993eb10a587a",
+  "_spec": "livekit-client@^0.15.0",
+  "_where": "D:\\xampp\\htdocs\\livekit",
+  "author": {
+    "name": "David Zhao",
+    "email": "david@davidzhao.com"
+  },
+  "bugs": {
+    "url": "https://github.com/livekit/client-sdk-js/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "events": "^3.3.0",
+    "loglevel": "^1.8.0",
+    "protobufjs": "^6.11.2",
+    "ts-debounce": "^3.0.0",
+    "webrtc-adapter": "^8.1.0"
+  },
+  "deprecated": false,
+  "description": "JavaScript/TypeScript client SDK for LiveKit",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/ws": "^7.4.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@webpack-cli/serve": "^1.5.2",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-plugin-import": "^2.24.2",
+    "gh-pages": "^3.2.3",
+    "jest": "^27.4.3",
+    "ts-jest": "^27.0.7",
+    "ts-loader": "^8.1.0",
+    "ts-proto": "^1.85.0",
+    "typedoc": "^0.20.35",
+    "typedoc-plugin-no-inherit": "1.3.0",
+    "typescript": "~4.2.3",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.1"
+  },
+  "homepage": "https://github.com/livekit/client-sdk-js#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "livekit-client",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/livekit/client-sdk-js.git"
+  },
+  "scripts": {
+    "build": "yarn exec tsc",
+    "build-docs": "yarn exec typedoc",
+    "build-sample": "cd example && webpack && cp styles.css index.html dist/",
+    "deploy": "gh-pages -d example/dist",
+    "lint": "yarn exec eslint src",
+    "proto": "protoc --plugin=node_modules/ts-proto/protoc-gen-ts_proto --ts_proto_opt=esModuleInterop=true --ts_proto_out=./src/proto --ts_proto_opt=outputClientImpl=false,useOptionals=true -I../protocol ../protocol/livekit_rtc.proto ../protocol/livekit_models.proto",
+    "sample": "cd example && webpack serve",
+    "test": "jest"
+  },
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "version": "0.15.0"
+}
